@@ -23,15 +23,19 @@ function send(){
 }
 question_turn="player1";
 answer_turn="player2";
+update_player1_score=0;
+update_player2_score=0;
 function check(){
     get_answer=document.getElementById("input_check_box").value;
     if(get_answer==actual_answer){
         if(answer_turn=="player1"){
-            update_player1_score=player1_score+1;
+            update_player1_score=update_player1_score+1;
+            console.log("player 1 score"+update_player1_score);
             document.getElementById("player1_score").innerHTML=update_player1_score;
         }
         else{
-            update_player2_score=player2_score+1;
+            update_player2_score=update_player2_score+1;
+            console.log("player 2 score"+update_player2_score);
             document.getElementById("player2_score").innerHTML=update_player2_score;   
         }
     }
@@ -53,4 +57,4 @@ function check(){
         document.getElementById("questioner_name").innerHTML="Question Turn - "+player1_name;
     }
     document.getElementById("output").innerHTML="";
-}
+} 
